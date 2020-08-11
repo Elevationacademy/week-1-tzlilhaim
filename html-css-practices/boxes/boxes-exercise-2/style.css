@@ -1,0 +1,38 @@
+.boxes{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+#container {
+    background-color: red;
+    height: 300px;
+    width: 300px;
+    position: relative;
+}
+
+#box-one{
+    background-color: blue;
+}
+
+#box-two{
+    background-color: green;
+    display: inline-block;
+    right: 0;
+}
+
+#box-three{
+    background-color: yellow;
+    bottom: 0;
+}
+
+#box-four{
+    background-color: purple;
+    bottom: 0;
+    right: 0;
+}
+
+#box-five{
+    background-color: white;
+    margin: 100px;
+}

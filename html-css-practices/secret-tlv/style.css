@@ -1,0 +1,19 @@
+body{
+    background-color: #ddd
+}
+
+nav{
+    background-color: rgb(51, 51, 51);
+}
+
+.hero-image{
+    width: 100%;
+}
+
+li:first-child{
+    color: green;
+}
+
+li:first-child a{
+    color: green;
+}

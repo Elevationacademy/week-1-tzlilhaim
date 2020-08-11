@@ -1,0 +1,149 @@
+.exercises{
+margin-top: 20px;
+}
+
+#container {
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+
+#horizontal-stripe{
+    background-color: red;
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    margin-top: 20px;
+
+}
+#vertical-stripe{
+background-color: red;
+height: 100%;
+width: 10px;
+position: absolute;
+margin-left: 20px;
+}
+
+#graph-container{
+    background-color: mediumslateblue;
+    height: 200px;
+    width: 400px;
+    padding: 5px;
+    position: relative;
+}
+
+.columns{
+    width: 30px;
+    background-color: lightsteelblue;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+}
+
+#time{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+}
+.graph-texts{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#column-1{
+    height: 50px;
+    margin-left: 0 !important;
+}
+#column-2{
+    height: 120px;
+    margin-left: 60px;
+}
+#column-3{
+    height: 170px;
+    margin-left: 120px;
+}
+#column-4{
+    height: 150px;
+    margin-left: 180px;
+}
+#column-5{
+    height: 130px;
+    margin-left: 240px;
+}
+#column-6{
+    height: 80px;
+    margin-left: 300px;
+}
+
+#magnet{
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+#magnet-handle{
+    background-color: red;
+    width: 100%;
+    height: 75%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+.magnet-edges{
+    background-color: grey;
+    height: 25%;
+    width: 25%;
+    position: absolute;
+    top: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#right-edge{
+    right: 0;
+}
+#left-edge{
+    left: 0;
+}
+
+#magnet-hole{
+    background-color: white;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 25%;
+    height: 75%;
+    width: 50%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#chocolate-bar{
+    height: 200px;
+    width: 400px;
+    position: relative;
+}
+.chocolate-rows{
+    background-color: black;
+    height: 45%;
+    width: auto;
+    position: relative;
+    padding: 2px;
+}
+
+#rows-barrier{
+    background-color: darkred;
+    height: 5px;
+    width: auto;
+}
+
+.chocolate-cubes{
+    background-color: #66320E;
+    display: inline-block;
+    height: 100%;
+    width: 96px;
+}
