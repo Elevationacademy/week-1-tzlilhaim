@@ -1,0 +1,32 @@
+#reservations-sys-container{
+    display: inline-block;
+    background-color: #ffcc99;
+    box-shadow: 5px 5px 5px 1px #ff794d;
+    border: solid 2px #ff794d;
+    padding: 10px;
+}
+
+#check-results-container{
+    background-color: #ffe5cc;
+}
+
+.nameInputHovered{
+    background-color: #ffcccc;
+    color: #661a00;
+}
+.nameInputFocused {
+    background-color: #ffb399;
+}
+
+.nameInputAlerted {
+    background-color: white;
+    color: red;
+    border-style: solid;
+    border-color: red;
+}
+
+.checkBtnHovered {
+    background-color: #ffcccc;
+    color: #661a00;
+    box-shadow: 1px 1px #ff794d;
+}
