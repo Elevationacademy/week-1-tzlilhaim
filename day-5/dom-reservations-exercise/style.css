@@ -1,32 +1,63 @@
 #reservations-sys-container{
     display: inline-block;
-    background-color: #ffcc99;
-    box-shadow: 5px 5px 5px 1px #ff794d;
-    border: solid 2px #ff794d;
+    background-color: #ffdab3;
+    box-shadow: 5px 5px 5px 1px #330d00;
+    border: solid 2px #330d00;
     padding: 10px;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
 }
 
 #check-results-container{
-    background-color: #ffe5cc;
+    background-color: #fff9e5;
+    margin-top: 5px;
 }
 
-.nameInputHovered{
-    background-color: #ffcccc;
-    color: #661a00;
-}
-.nameInputFocused {
-    background-color: #ffb399;
+#name-input{
+    cursor: pointer;
+    outline: none;
+    padding: 5px;
 }
 
-.nameInputAlerted {
+#check-btn{
+    background-color: #fff9e5;
+    border: solid 1px #330d00;
+    border-radius: 5px;
+    box-shadow: 0 4px #330d00;
+    cursor: pointer;
+    color: #330d00;
+    outline: none;
+    padding: 5px;
+}
+
+.nameInput:hover{
+    background-color: #fff9e5;
+    color: #330d00;
+}
+.nameInput:active {
+    background-color: #ffd9b3;
+}
+
+.nameInputErr {
     background-color: white;
     color: red;
-    border-style: solid;
-    border-color: red;
+    border: solid 2px red !important;
 }
 
-.checkBtnHovered {
-    background-color: #ffcccc;
-    color: #661a00;
-    box-shadow: 1px 1px #ff794d;
+#nameInputErrMsg{
+    color: red;
+    font-size: small;
+    display: none;
+}
+
+.checkBtn:hover {
+    background-color: #ffd9b3 !important;
+}
+
+.checkBtn:active {
+    background-color: #ffb399;
+    box-shadow: none;
+    box-shadow: 0 1px #330d00 !important;
+    transform: translateY(3px);
 }

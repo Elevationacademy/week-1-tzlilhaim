@@ -7,112 +7,99 @@ const reservations = {
 
 // Input element
 const inputResName = document.getElementById("name-input")
-const inputInteractions = {
-    alrtedEnd: function (){
 
-        // Remove class to element to return to default style
-        inputResName.classList.remove("nameInputAlerted")
-    },
-    hoverEnd:
-        function () {
+const inputErrHandling = {
+    alert: function (givenInput) {
 
-            // Remove class to element to return to default style
-            inputResName.classList.remove("nameInputHovered")
-        },
-    hover: function () {
-         // Add class to element to change style state
-         inputResName.classList.add("nameInputHovered")
-    },
-    focus:
-        function () {
+        // Add alerted appearance to input
+        inputResName.classList.add("nameInputErr")
 
-            // if the field is alerted, remove it upon focus
-            if (inputResName.classList.contains("nameInputAlerted")) {
-                inputInteractions.alrtedEnd()
-            }
+        // Display error message label
+        const errMsgLabel = document.getElementById("nameInputErrMsg")
+        errMsgLabel.style.display = "block"
 
-            // Add class to element to change style state
-            inputResName.classList.add("nameInputFocused")
-        },
-    focusEnd:
-        function () {
-
-            // Remove class to element to return to default style
-            inputResName.classList.remove("nameInputFocused")
+        // Check input and set text according to invalid use case
+        if (givenInput == "") {
+            errMsgLabel.innerHTML = "* Please provide a name"
+        } else {
+            errMsgLabel.innerHTML = "* Must use English letters only"
         }
+    },
+    remove: function () {
+
+        // If error handling is displayed -
+        // Remove error appearance from input
+        if (inputResName.classList.contains("nameInputErr")) {
+            inputResName.classList.remove("nameInputErr")
+        }
+
+        // Hide error message label
+        const errMsg = document.getElementById("nameInputErrMsg")
+        if (errMsg.style.display !== "none") {
+
+            errMsg.style.display = "none"
+        }
+    }
 }
 
-// Dynamically set functions on events
-inputResName.setAttribute("onfocus", "inputInteractions.focus()")
-inputResName.setAttribute("onblur", "inputInteractions.focusEnd()")
-inputResName.setAttribute("onmouseover", "inputInteractions.hover()")
-inputResName.setAttribute("onmouseout", "inputInteractions.hoverEnd()")
-
+// Dynamically set function to be invoked on events
+inputResName.setAttribute("onchange", "inputErrHandling.remove()")
 
 // Button element
 const btnResCheck = document.getElementById("check-btn")
-const btnInteractions = {
-    hoverEnd:
-        function () {
-            btnResCheck.classList.remove("checkBtnHovered")
-        },
-    hover:
-        function () {
-            btnResCheck.classList.add("checkBtnHovered")
-        },
-    click:
-        function () {
+const btnClick =
+    function () {
 
-            // Get input value if exists and alert if empty
-            const inputValue = inputResName.value
-            if (inputValue == "") {
-                inputResName.classList.add("nameInputAlerted")
-            } else {
+        // Get input value upon button click
+        const inputValue = inputResName.value
 
-                // Get all the names of 
-                const reservationNames = Object.keys(reservations)
-                let isReservationFound = false
-                let isClaimed
-                let resNameAsSaved
+        // Search reservation if input valid, alert if invalid
 
-                // Check if reservation exists & claimed
-                for (rName of reservationNames) {
-                    if (inputValue.toLowerCase() === rName.toLowerCase()) {
-                        isReservationFound = true
-                        resNameAsSaved = rName
-                        if (reservations[rName].claimed) {
-                            isClaimed = true
-                        } else {
-                            isClaimed = false
-                        }
-                    }
-                }
+        if (!RegExp(/^[a-zA-Z\s]+$/).test(inputValue)) {
+            inputErrHandling.alert(inputValue)
+        } else {
 
-                // Print name check results into a paragraph
-                const checkResultsContainer = document.getElementById("check-results-container")
-                const nameCheckResult = document.createElement("p")
+            // Get all the names of 
+            const reservationNames = Object.keys(reservations)
+            let isReservationFound = false
+            let isClaimed
+            let resNameAsSaved
 
-                if (isReservationFound) {
-                    if (isClaimed) {
-                        nameCheckResult.innerHTML = "Hmm, someone already claimed the reservation under " + "'" + inputValue + "'"
+            // Check if reservation exists & claimed
+            for (rName of reservationNames) {
+                if (inputValue.toLowerCase() === rName.toLowerCase()) {
+                    isReservationFound = true
+                    resNameAsSaved = rName
+                    if (reservations[rName].claimed) {
+                        isClaimed = true
                     } else {
-                        nameCheckResult.innerHTML = "Welcome, " + inputValue
-
-                        // Change reservation's status to claimed
-                        reservations[resNameAsSaved].claimed = true
+                        isClaimed = false
                     }
-                } else {
-                    nameCheckResult.innerHTML = "You have no reservation, " + inputValue
                 }
-                checkResultsContainer.appendChild(nameCheckResult)
             }
 
-            // Empty the input field's value
-            inputResName.innerHTML = ""
-        }
-}
+            // Print name check results into a paragraph
+            const checkResultsContainer = document.getElementById("check-results-container")
+            const nameCheckResult = document.createElement("p")
 
-// Dynamically set functions on events
-btnResCheck.setAttribute("onmouseover", "btnInteractions.hover()")
-btnResCheck.setAttribute("onmouseout", "btnInteractions.hoverEnd()")
-btnResCheck.setAttribute("onclick", "btnInteractions.click()")
+            if (isReservationFound) {
+                if (isClaimed) {
+                    nameCheckResult.innerHTML = "Hmm, someone already claimed the reservation under " + "'" + inputValue + "'"
+                } else {
+                    nameCheckResult.innerHTML = "Welcome, " + inputValue
+
+                    // Change reservation's status to claimed
+                    reservations[resNameAsSaved].claimed = true
+                }
+            } else {
+                nameCheckResult.innerHTML = "You have no reservation, " + inputValue
+            }
+            checkResultsContainer.appendChild(nameCheckResult)
+
+            // Empty the input field's value
+            inputResName.value = ""
+        }
+    }
+
+// Dynamically set functions to be invoked on events
+btnResCheck.setAttribute("onclick", "btnClick()")
