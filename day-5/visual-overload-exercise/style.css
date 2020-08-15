@@ -1,0 +1,15 @@
+#container {
+    padding: 5px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.boxes{
+    height: 100px;
+    width: 100px;
+    border: solid 1px black;
+    display: inline-block;
+    background-color: white;
+    margin-left: 5px;
+}
