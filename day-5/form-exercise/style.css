@@ -1,0 +1,122 @@
+#container {
+    width: 400px;
+    height: 300px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 20px;
+    background-color: #e0e0eb;
+    border: solid 1px #d0e1e1;
+    box-shadow: 5px 5px 5px #29293d;
+    color: #29293d;
+    border-radius: 10px;
+    font-weight: bold;
+    align-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-inputs{
+    font-size: medium;
+    border-radius: 5px;
+    outline: none;
+    border: solid 1px #29293d;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.form-inputs:hover{
+    background-color: #d5d2e0;
+    cursor: pointer;
+}
+
+.form-inputs:focus{
+    background-color: #a3a3c2;
+}
+
+.field-containers{
+    margin-top: 20px;
+}
+
+#salary-birthday-container{
+    padding: inherit;
+    position: relative;
+}
+
+#salary-container{
+    display: inline-block;
+}
+
+#birthday-container{
+    display: inline-block;
+    position: absolute;
+    padding-right: inherit;
+    right: 0;
+}
+
+#phone-container{
+    display: block;
+}
+
+#footer-container{
+    position: relative;
+    padding-top: 10px;
+}
+
+.input-success {
+    border: solid 2px green;
+    background-color: white;
+    color: green;
+}
+
+.input-error {
+    border: solid 2px red;
+    background-color: white;
+    color: red;
+}
+
+#err-msg {
+    color: red;
+    width: 50%;
+    display: none;
+    text-transform: capitalize;
+    position: absolute;
+    bottom: 0;
+    font-size: small;
+}
+
+#submit {
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    color: #29293d;
+    font-size: medium;
+    font-weight: bold;
+    box-shadow: 0px 5px #29293d;
+    padding: 5px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#submit:hover {
+    border: none;
+    transform: translateY(2px);
+    background-color: #c2c2d6;
+    cursor: pointer;
+}
+
+#submit:active {
+    background-color: #8585ad;
+    color: white;
+    cursor: pointer;
+}
+
+.success-icon {
+    color: green;
+    display: none;
+}
+
+.failure-icon {
+    color: red;
+    display: none;
+}

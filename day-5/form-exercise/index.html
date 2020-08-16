@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <form action="" id="form" method="get">
+            <div id="name-container" class="field-containers">
+                <i class="fa fa-user input-icon"></i>
+                Name: <br>
+                <input type="text" id="name" name="name" class="form-inputs" onchange="">
+                <i class="fa fa-check success-icon"></i>
+                <i class="fa fa-exclamation failure-icon"></i>
+            </div><br>
+            <div id="salary-birthday-container">
+                <div id="salary-container" class="field-containers">
+                    <i class="fa fa-handshake-o input-icon"></i>
+                    Desired Salary: <br>
+                    <input id="salary" type="text" name="salary" class="form-inputs">
+                    <i class="fa fa-check success-icon"></i>
+                    <i class="fa fa-exclamation failure-icon"></i>
+                </div>
+                <div id="birthday-container" class="field-containers">
+                    <i class="fa fa-birthday-cake input-icon"></i>
+                    Birthday: <br>
+                    <input type="date" id="birthday" name="birthday" class="form-inputs">
+                    <i class="fa fa-check success-icon"></i>
+                    <i class="fa fa-exclamation failure-icon"></i>
+                </div>
+            </div> <br>
+            <div id="phone-container" class="field-containers">
+                <i class="fa fa-mobile-phone input-icon"></i>
+                Phone: <br>
+                <input type="tel" id="phone" name="phone" class="form-inputs">
+                <i class="fa fa-check success-icon"></i>
+                <i class="fa fa-exclamation failure-icon"></i>
+            </div> <br>
+            <div id="footer-container" class="field-containers">
+                    <p id="err-msg"></p>
+                <button type="button" id="submit" onclick="validate()">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
