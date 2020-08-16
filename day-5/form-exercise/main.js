@@ -125,7 +125,9 @@ const checkInput = {
 
 const submitForm = function () {
     const userName = document.getElementById("name").value
-    alert("Hey " + userName + "! Your form was submitted sucessfully :)")
+
+    document.getElementById("container").style.display = "none"
+    alert("Welcome " + userName + "! Your form was submitted sucessfully :)")
 }
 
 const validate = function () {
