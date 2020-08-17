@@ -7,11 +7,9 @@ body {
     height: 300px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 20px;
-    background-color: #ffb366;
-    border: solid 1px #ff884d;
+    background-color: #e6ffffb4;
     box-shadow: 10px 10px 10px 5px #331100;
-    color: #602020;
-    border-radius: 10px;
+    color: #331100;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -34,12 +32,13 @@ body {
 }
 
 .form-inputs:hover{
-    background-color: #ffdab3;
+    background-color: #0e385a3d;
     cursor: pointer;
 }
 
 .form-inputs:focus{
-    background-color: #d89b69;
+    background-color: #0e385a7c;
+    color: white;
 }
 
 .field-containers{
@@ -95,7 +94,6 @@ body {
 
 #submit {
     border: solid 2px #602020;
-    border-radius: 5px;
     outline: none;
     background-color: white;
     color: #602020;
@@ -112,12 +110,12 @@ body {
 #submit:hover:enabled {
     border: none;
     transform: translateY(2px);
-    background-color: #ffdab3;
+    background-color: rgba(211, 84, 0, 0.445);
     cursor: pointer;
 }
 
 #submit:active:enabled {
-    background-color: #cc4400;
+    background-color: rgba(211, 84, 0, 0.521);
     color: white;
     cursor: pointer;
 }
