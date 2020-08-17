@@ -1,5 +1,36 @@
 // Error Handling
 const errMsg = document.getElementById("err-msg")
+const submitBtn = document.getElementById("submit")
+
+const submitBtnHandling = {
+    isDisabled: function () {
+        submitBtn.disabled
+        return
+    },
+    disableBtn: function () {
+        
+        // If button is already disabled, do nothing
+        if (this.isDisabled()) {
+            return
+        } else {
+
+            // Otherwise, disable the button
+            submitBtn.disabled = true
+        }
+    },
+    enableBtn: function () {
+        
+        // If the button is already enabled, do nothing
+        if (!this.isDisabled) {
+            return
+        } else {
+
+            // Otherwise, enable the button
+            submitBtn.disabled = false
+        }
+    }
+
+}
 
 const errHandling = {
     shownError: {
@@ -22,6 +53,9 @@ const errHandling = {
         // Update shown error obejct accordingly
         this.shownError.isShown = false
         this.shownError.fieldId = 0
+
+        // Re-enable the button upon change on the input
+        submitBtnHandling.enableBtn()
 
     },
     showErrMsg: function (userInput, fieldId) {
@@ -66,6 +100,9 @@ const errHandling = {
 
         // Add listner to remove the error on this input's change
         document.getElementById(fieldId).setAttribute("onchange", "errHandling.removeError(this)")
+
+        // Disable submit button untill the input with the error changes
+        submitBtnHandling.disableBtn()
     }
 }
 
@@ -152,7 +189,7 @@ const validate = function () {
             return
         }
     }
-    
+
     // As long as all are valid and all were checked, submit form
     let isAllValid = true
     i = 0

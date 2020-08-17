@@ -1,35 +1,45 @@
+body {
+    background-image: url(file:///Users/tzlilhaim/code/bootcamp/personal-exercises/week-1/week-1-tzlilhaim/day-5/form-exercise/conffetti-background.jpeg);
+  }
+
 #container {
     width: 400px;
     height: 300px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 20px;
-    background-color: #e0e0eb;
-    border: solid 1px #d0e1e1;
-    box-shadow: 5px 5px 5px #29293d;
-    color: #29293d;
+    background-color: #ffb366;
+    border: solid 1px #ff884d;
+    box-shadow: 10px 10px 10px 5px #331100;
+    color: #602020;
     border-radius: 10px;
     font-weight: bold;
-    align-content: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin:0 auto;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-250px;
+    margin-top:-250px;
 }
 
 .form-inputs{
     font-size: medium;
+    background-color: #fff0e6;
     border-radius: 5px;
     outline: none;
-    border: solid 1px #29293d;
+    border: solid 1px #602020;
     padding: 5px;
     margin-top: 5px;
 }
 
 .form-inputs:hover{
-    background-color: #d5d2e0;
+    background-color: #ffdab3;
     cursor: pointer;
 }
 
 .form-inputs:focus{
-    background-color: #a3a3c2;
+    background-color: #d89b69;
 }
 
 .field-containers{
@@ -84,13 +94,14 @@
 }
 
 #submit {
+    border: solid 2px #602020;
     border-radius: 5px;
     outline: none;
     background-color: white;
-    color: #29293d;
+    color: #602020;
     font-size: medium;
     font-weight: bold;
-    box-shadow: 0px 5px #29293d;
+    box-shadow: 0px 5px #602020;
     padding: 5px;
     display: inline-block;
     position: absolute;
@@ -98,17 +109,23 @@
     bottom: 0;
 }
 
-#submit:hover {
+#submit:hover:enabled {
     border: none;
     transform: translateY(2px);
-    background-color: #c2c2d6;
+    background-color: #ffdab3;
     cursor: pointer;
 }
 
-#submit:active {
-    background-color: #8585ad;
+#submit:active:enabled {
+    background-color: #cc4400;
     color: white;
     cursor: pointer;
+}
+
+button:disabled {
+  opacity: 60%;
+  transform: translateY(none);
+  cursor: not-allowed;
 }
 
 .success-icon {
